@@ -1,0 +1,12 @@
+name: Stop ClawCloudRun App
+on:
+  schedule:
+    - cron: '0 20 * * *'  # 8 PM UTC daily
+jobs:
+  stop-app:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Stop WordPress App
+        run: |
+          curl -X POST "https://sg-members-1.run.claw.cloud/api/apps/wordpress-ttpahivp/stop" \
+            -H "Authorization: Bearer ${{ secrets.API_KEY }}"
