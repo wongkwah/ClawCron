@@ -1,7 +1,7 @@
 name: Stop ClawCloudRun App
 on:
   schedule:
-    - cron: '15 5 * * *'  # Runs at 8 PM UTC daily
+    - cron: '*/5 * * * *'  # Runs at 8 PM UTC daily
 jobs:
   stop-app:
     runs-on: ubuntu-latest
